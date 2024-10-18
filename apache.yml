@@ -1,0 +1,5 @@
+---
+- hosts: srv02
+  tasks:
+   - ansible.builtin.import_role:
+       name: apache

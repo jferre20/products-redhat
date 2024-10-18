@@ -1,0 +1,27 @@
+---
+- hosts: srv02
+  tasks:
+    - ansible.builtin.group:
+        name: webdev
+        state: present
+
+    - ansible.builtin.file:
+        dest: /webdev
+        src: /var/www/html
+        group: webdev
+        mode: 2775
+        setype: httpd_sys_content_t
+        state: link
+
+    - ansible.builtin.template:
+        src: webdev.j2
+        dest: /var/www/html/webdev.html
+
+    - ansible.builtin.command: "restorecon -iR /webdev/*"
+      notify: restart httpd
+
+  handlers:
+    - name: restart httpd
+      ansible.builtin.service:
+        name: httpd
+        state: restarted

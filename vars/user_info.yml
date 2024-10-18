@@ -1,0 +1,8 @@
+---
+username:
+  - user: joao
+    job: dev
+  - user: luis
+    job: sys
+  - user: julia
+    job: manager

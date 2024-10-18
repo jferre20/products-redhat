@@ -1,0 +1,12 @@
+---
+- name: Download hardware report
+  ansible.builtin.get_url:
+    url: http://srv01.jferre.local/files/hardware_report
+    dest: /tmp/hardware_report
+
+- name: Replace lines with variables
+  ansible.builtin.replace:
+    path: /tmp/hardware_report
+    regexp: "={{item.regexp}}"
+    replace: "={{item.variable}}"
+  loop: "{{hardware}}"

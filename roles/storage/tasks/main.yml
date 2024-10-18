@@ -1,0 +1,46 @@
+---
+- name: Validate disk
+  set_fact:
+    device: vdc
+  when: not 'vdb' in ansible_facts['devices']
+
+- block:
+    - name: create a vg
+      community.general.lvg:
+        vg: vg01
+        pvs:
+         - "/dev/{{device}}"
+    
+    - name: create a lv
+      community.general.lvol:
+        lv: lv01
+        vg: vg01
+        size: 1500m
+  
+  rescue:
+    - name: fail message
+      ansible.builtin.debug:
+        msg: "The disk has insufficient size to create a LV with 1500 MB and will be created with 800 MB."
+
+    - name: create a vg with another disk
+      community.general.lvg:
+        vg: vg01
+        pvs:
+         - "/dev/{{device}}"
+
+    - name: change size from lv
+      community.general.lvol:
+        lv: lv01
+        vg: vg01
+        size: 800m
+
+  always:
+    - community.general.filesystem:
+        fstype: ext4
+        device: /dev/vg01/lv01
+
+    - ansible.posix.mount:
+        path: /storage
+        src: /dev/vg01/lv01
+        fstype: ext4
+        state: mounted

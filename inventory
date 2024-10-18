@@ -1,0 +1,8 @@
+[dev]
+srv02
+
+[test]
+srv03
+
+[prod]
+srv04

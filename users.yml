@@ -1,0 +1,32 @@
+- hosts: dev
+  vars_files:
+    - vars/user_info.yml
+    - locker.yml
+  tasks:
+    - ansible.builtin.user:
+        name: "{{item.user}}"
+        password: "{{dev_pass|password_hash('sha512')}}"
+      loop: "{{username}}"
+      when: "'dev' in item.job"
+
+- hosts: test
+  vars_files:
+    - vars/user_info.yml
+    - locker.yml
+  tasks:
+    - ansible.builtin.user:
+        name: "{{item.user}}"
+        password: "{{sys_pass|password_hash('sha512')}}"
+      loop: "{{username}}"
+      when: "'sys' in item.job"
+
+- hosts: prod
+  vars_files:
+    - vars/user_info.yml
+    - locker.yml
+  tasks:
+    - ansible.builtin.user:
+        name: "{{item.user}}"
+        password: "{{manager_pass|password_hash('sha512')}}"
+      loop: "{{username}}"
+      when: "'manager' in item.job"

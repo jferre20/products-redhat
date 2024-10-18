@@ -1,0 +1,7 @@
+---
+- hosts: srv02, srv03
+  vars:
+    device: vdb
+  tasks:
+    - ansible.builtin.include_role:
+        name: storage
