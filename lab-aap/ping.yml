@@ -1,9 +1,7 @@
 ---
-- hosts: "{{ hosts_list }}"
+- hosts: localhost
   tasks:
-    - name: Test ping in all hosts
-      ansible.builtin.ping:
-
     - name: Debug hostname
-      ansible.builtin.debug:
-        var: ansible_facts['hostname']
+      delegate_to: "{{ hosts_list}}"
+      ansible.builtin.shell: hostname
+      register: hostname
