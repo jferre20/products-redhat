@@ -7,4 +7,5 @@
    
     - name: Debug hostname
       ansible.builtin.debug:
-        var: hosts_list
+        var: item
+      loop: "{{ servers }}"
