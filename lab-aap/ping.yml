@@ -8,4 +8,4 @@
     - name: Debug hostname
       ansible.builtin.debug:
         msg: "snap_{{ item }}_{{ lookup('pipe', 'date +%Y-%m-%d') }}"
-      loop: "{{ hosts_list }}"
+      loop: "{{ servers }}"
