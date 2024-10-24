@@ -1,6 +1,10 @@
 ---
 - hosts: localhost
   tasks:
+    - name: Split variable loop
+      set_fact:
+        servers: "{{ hosts_list | split('\n') }}"
+   
     - name: Debug hostname
       ansible.builtin.debug:
         var: hosts_list
