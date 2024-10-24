@@ -2,6 +2,5 @@
 - hosts: localhost
   tasks:
     - name: Debug hostname
-      delegate_to: "{{ hosts_list | split('\n') }}"
-      ansible.builtin.shell: hostname
-      register: hostname
+      ansible.builtin.debug:
+        var: hosts_list
