@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: "{{ hosts_list }}"
   tasks:
     - name: Test ping in all hosts
       ansible.builtin.ping:
