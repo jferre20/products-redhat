@@ -3,9 +3,13 @@
   tasks:
     - name: Split variable loop
       set_fact:
-        servers: "{{ hosts_list | split('\n') }}"
+        #servers: "{{ hosts_list | split('\n') }}"
+        servers: "{{ hosts_list }}"
+
+    - shell: 'date +%Y-%m-%T'
+      register: date
    
-    - name: Debug hostname
+    - name: Debug name snapshot
       ansible.builtin.debug:
-        msg: "snap_{{ item }}_{{ lookup('pipe', 'date +%Y-%m-%d') }}"
+        msg: "{{date.stdout}} - snap_{{ item }}_{{ lookup('pipe', 'date --utc +%Y-%m-%d-%T') }}"
       loop: "{{ servers }}"
