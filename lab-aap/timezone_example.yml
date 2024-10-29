@@ -1,17 +1,20 @@
 ---
 - hosts: localhost
   tasks:
-    - shell: timedatectl show | grep 'Timezone'
+    - name: Get date before change TZ
+      ansible.builtin.shell: date
       register: timezone
 
-    - debug:
+    - ansible.builtin.debug:
         var: timezone.stdout
 
-    - community.general.timezone:
+    - name: Set timezone correctly
+      community.general.timezone:
         name: America/Sao_Paulo
    
-    - shell: timedatectl show | grep 'Timezone'
+    - name: Get date after change TZ
+      ansible.builtin.shell: date
       register: timezone2
  
-    - debug:
-        var: timezone2
+    - ansible.builtin.debug:
+        var: timezone2.stdout
