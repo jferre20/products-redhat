@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks:
+    - shell: timedatectl show | grep 'Timezone'
+      register: timezone
+
+    - debug:
+        var: timezone.stdout
+
+    - community.general.timezone:
+        name: America/Sao_Paulo
+   
+    - shell: timedatectl show | grep 'Timezone'
+      register: timezone2
+ 
+    - debug:
+        var: timezone2
