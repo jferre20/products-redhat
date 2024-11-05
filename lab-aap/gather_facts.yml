@@ -1,5 +1,5 @@
 ---
-- hosts: srv02
+- hosts: all
   tasks:
     - ansible.builtin.debug:
         var: ansible_facts['devices']['vdc']

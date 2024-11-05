@@ -11,7 +11,7 @@
 
 - name: Organize the versions list from {{ item }}
   ansible.builtin.set_fact:
-    cv_versions: "{{ cv_info.content_view.versions | map(attribute='version') | sort(reverse=true) }}"
+    cv_versions: "{{ cv_info.content_view.versions | map(attribute='version') | map('float') | sort(reverse=true) }}"
 
 - block:
     - name: Get the first two versions from {{ item }}
@@ -19,7 +19,18 @@
         cv_versions_list:
           - "{{ cv_versions[0] }}"
           - "{{ cv_versions[1] }}"
-    
+
+    - name: Convert to float
+      ansible.builtin.set_fact:
+        cv_versions_list: "{{ cv_versions_list | map('float') }}"
+
+#    - ansible.builtin.debug:
+#        msg: "{{ version_delete }}"
+#      loop: "{{ cv_versions }}"
+#      loop_control:
+#        loop_var: version_delete
+#      when: version_delete in cv_versions_list
+   
     - name: Delete oldest versions in {{ item }} CV
       redhat.satellite.content_view_version:
         content_view: "{{ item }}"
