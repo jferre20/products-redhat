@@ -1,5 +1,5 @@
 ---
-- hosts: bastion
+- hosts: localhost
   tasks:
     - shell: hostname
       delegate_to: "{{ vmname }}"
