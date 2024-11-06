@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+    - shell: hostname
+      delegate_to: "{{ vmname }}"
+      register: hostname
+
+    - debug:
+        var: hostname
