@@ -6,6 +6,7 @@
         ansible_connection: winrm
         ansible_user: administrator 
         ansible_password: redhat@123
-        ansible_winrm_transport: basic
+        ansible_port: 5985
+        ansible_winrm_transport: ntlm
       delegate_to: "{{ server }}"
       win_ping:
