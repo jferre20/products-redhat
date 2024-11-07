@@ -1,6 +1,10 @@
 ---
 - hosts: bastion
   tasks:
+    - name: Get all hosts
+      ansible.builtin.shell: "cat /root/redhat-lab/myhosts"
+      register: hosts
+
     - name: Create DNS record
       vars:
         ansible_connection: winrm
@@ -10,7 +14,8 @@
         ansible_winrm_transport: ntlm
       delegate_to: ad01
       community.windows.win_dns_record:
-        name: "{{ servername }}"
+        name: "{{ item | split(' ') | last }}"
         type: "A"
-        value: "{{ ipaddress }}"
-        zone: "{{ domain }}"
+        value: "{{ item | split(' ') | first }}"
+        zone: "jferre.local"
+      loop: "{{ hosts.stdout_lines }}"
