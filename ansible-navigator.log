@@ -1,0 +1,348 @@
+2024-11-07T19:32:06.468995+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/activation_keys/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469376+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/activation_keys/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469425+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/auth_sources_ldap/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469445+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/auth_sources_ldap/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469460+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_profiles/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469475+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_profiles/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469488+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_resources/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469500+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_resources/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469513+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_credentials/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469525+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_credentials/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469537+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_rhel/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469549+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_rhel/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469564+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_publish/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469574+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_publish/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469584+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_version_cleanup/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469595+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_version_cleanup/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469606+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_views/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469622+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_views/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469633+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/convert2rhel/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469644+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/convert2rhel/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469654+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/domains/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469664+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/domains/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469674+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/hostgroups/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469684+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/hostgroups/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469695+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/lifecycle_environments/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469705+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/lifecycle_environments/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469716+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/locations/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469727+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/locations/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469736+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/manifest/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469746+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/manifest/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469756+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/operatingsystems/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469766+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/operatingsystems/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469775+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/organizations/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469791+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/organizations/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469821+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/provisioning_templates/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469843+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/provisioning_templates/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469857+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/repositories/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469869+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/repositories/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469880+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/settings/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469891+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/settings/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469902+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/subnets/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469913+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/subnets/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469923+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:06.469933+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.739782+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/activation_keys/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740104+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/activation_keys/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740133+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/auth_sources_ldap/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740149+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/auth_sources_ldap/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740161+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_profiles/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740181+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_profiles/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740192+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_resources/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740201+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_resources/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740213+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_credentials/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740222+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_credentials/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740232+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_rhel/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740247+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_rhel/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740258+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_publish/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740267+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_publish/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740276+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_version_cleanup/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740285+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_version_cleanup/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740294+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_views/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740303+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_views/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740311+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/convert2rhel/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740320+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/convert2rhel/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740329+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/domains/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740349+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/domains/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740360+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/hostgroups/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740370+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/hostgroups/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740381+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/lifecycle_environments/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740390+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/lifecycle_environments/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740399+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/locations/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740409+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/locations/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740418+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/manifest/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740430+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/manifest/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740439+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/operatingsystems/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740448+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/operatingsystems/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740457+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/organizations/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740466+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/organizations/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740475+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/provisioning_templates/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740484+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/provisioning_templates/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740493+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/repositories/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740503+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/repositories/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740521+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/settings/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740534+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/settings/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740543+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/subnets/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740552+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/subnets/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740560+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:32:24.740569+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:32:27.015064+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/callback/default_without_diff.py', 'type': 'callback'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.017520+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/callback/timestamp.py', 'type': 'callback'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.020855+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/lookup/onepassword.py', 'type': 'lookup'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.021071+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/lookup/onepassword_doc.py', 'type': 'lookup'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.021214+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/lookup/onepassword_raw.py', 'type': 'lookup'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.024060+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/datadog_downtime.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.026694+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_ecs_instance.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.026855+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_evs_disk.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.026977+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_network_vpc.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027117+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_eip.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027248+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_peering_connect.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027367+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_port.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027481+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_private_ip.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027591+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_route.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027699+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_security_group.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027812+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_security_group_rule.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.027960+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/hwc_vpc_subnet.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.028250+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/idrac_redfish_command.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.028380+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/idrac_redfish_config.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.028491+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/idrac_redfish_info.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.028599+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/ilo_redfish_command.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.028700+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/ilo_redfish_config.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.028804+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/ilo_redfish_info.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.031307+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/keycloak_component_info.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.031982+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/keycloak_user_federation.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.032279+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/keyring_info.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.035214+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/ocapi_command.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.035547+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/ocapi_info.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.039633+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/opendj_backendprop.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.042644+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/redfish_command.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.043036+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/redfish_config.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.043196+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/redfish_info.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.043815+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/rollbar_deployment.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.044582+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/scaleway_database_backup.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.045176+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/scaleway_security_group_rule.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:32:27.048311+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/xcc_redfish_command.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/ansible_navigator/actions/collections.py", line 306, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2024-11-07T19:33:33.411788+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/activation_keys/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412119+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/activation_keys/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412148+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/auth_sources_ldap/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412163+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/auth_sources_ldap/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412174+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_profiles/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412186+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_profiles/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412196+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_resources/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412205+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/compute_resources/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412215+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_credentials/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412224+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_credentials/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412232+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_rhel/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412266+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_rhel/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412277+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_publish/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412286+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_publish/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412295+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_version_cleanup/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412304+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_view_version_cleanup/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412312+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_views/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412321+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/content_views/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412330+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/convert2rhel/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412339+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/convert2rhel/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412348+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/domains/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412356+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/domains/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412365+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/hostgroups/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412374+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/hostgroups/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412383+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/lifecycle_environments/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412391+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/lifecycle_environments/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412400+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/locations/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412414+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/locations/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412423+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/manifest/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412432+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/manifest/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412441+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/operatingsystems/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412450+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/operatingsystems/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412459+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/organizations/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412467+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/organizations/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412476+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/provisioning_templates/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412485+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/provisioning_templates/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412494+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/repositories/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412502+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/repositories/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412511+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/settings/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412519+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/settings/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412528+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/subnets/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412536+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/subnets/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412545+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
+2024-11-07T19:33:33.412558+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/redhat-lab/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/main.yml Failed to find main.yml for role in redhat.satellite.

@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Create DNS record
+      community.windows.win_dns_record:
+        name: "{{ servername }}"
+        type: "A"
+        value: "{{ ipaddress }}"
+        zone: "{{ domain }}"
