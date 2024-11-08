@@ -21,17 +21,31 @@
       set_fact:
         aduser: "{{ (aduser_properties.objects | map(attribute='DistinguishedName'))[0] }}"
         aduser_gp: "{{ (aduser_properties.objects | map(attribute='MemberOf'))[0] }}"
+    
+    - name: Save all groups in file
+      ansible.builtin.lineinfile:
+        line: "{{ (item | split(','))[0] }}"
+        path: /tmp/groups
+        create: yes
+      loop: "{{ aduser_gp }}"
+
+    - name: Get groups to set in new user
+      ansible.builtin.slurp:
+        src: /tmp/groups
+      register: adgroups
+
+    - name: Remove file
+      ansible.builtin.file:
+        path: /tmp/groups
+        state: absent
 
     - set_fact:
         aduser_cn: "{{ (aduser | split(','))[1:] }}"
-        aduser_group_cn: "{{ (aduser_gp | split(','))[0] }}"
+        aduser_group_cn: "{{ adgroups['content'] | b64decode }}" 
 
     - set_fact:
         aduser_ou: "{{ aduser_cn | join(',') }}"
-        aduser_groups: "{{ aduser_group_cn | regex_replace('CN=','') }}"
-
-    - debug:
-        msg: "{{ aduser_ou }} {{ aduser_groups }}"
+        adgroups: "{{ aduser_group_cn.split('\n') | regex_replace('CN=') }}"
 
     - name: Create an user in AD
       vars:
@@ -47,4 +61,4 @@
         state: present
         path: "{{ aduser_ou }}"
         groups:
-          set: "{{ aduser_groups }}"
+          set: "{{ adgroups }}"
