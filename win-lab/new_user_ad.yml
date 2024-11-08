@@ -45,7 +45,7 @@
 
     - set_fact:
         aduser_ou: "{{ aduser_cn | join(',') }}"
-        adgroups: "{{ aduser_group_cn.split('\n') | regex_replace('CN=') }}"
+        adgroups_list: "{{ aduser_group_cn.split('\n') | regex_replace('CN=') }}"
 
     - name: Create an user in AD
       vars:
@@ -61,4 +61,4 @@
         state: present
         path: "{{ aduser_ou }}"
         groups:
-          set: "{{ adgroups }}"
+          set: "{{ adgroups_list }}"
