@@ -22,15 +22,9 @@
         aduser: "{{ (aduser_properties.objects | map(attribute='DistinguishedName'))[0] }}"
         aduser_gp: "{{ (aduser_properties.objects | map(attribute='MemberOf'))[0] }}"
 
-    - debug:
-        msg: "{{ aduser }} {{ aduser_gp }}"
-
     - set_fact:
         aduser_cn: "{{ (aduser | split(','))[1:] }}"
         aduser_group_cn: "{{ (aduser_gp | split(','))[0] }}"
-
-    - debug:
-        msg: "{{ aduser_cn }} {{ aduser_group_cn }}"
 
     - set_fact:
         aduser_ou: "{{ aduser_cn | join(',') }}"
@@ -39,18 +33,18 @@
     - debug:
         msg: "{{ aduser_ou }} {{ aduser_groups }}"
 
-#    - name: Create an user in AD
-#      vars:
-#        ansible_connection: winrm
-#        ansible_user: administrator 
-#        ansible_password: redhat@123
-#        ansible_port: 5985
-#        ansible_winrm_transport: ntlm
-#      delegate_to: ad01    
-#      microsoft.ad.user:
-#        identity: Roger Principe
-#        password: redhat@123
-#        state: present
-#        path: "{{ aduser_ou }}"
-#        groups:
-#          set: "{{ aduser_groups }}"
+    - name: Create an user in AD
+      vars:
+        ansible_connection: winrm
+        ansible_user: administrator 
+        ansible_password: redhat@123
+        ansible_port: 5985
+        ansible_winrm_transport: ntlm
+      delegate_to: ad01    
+      microsoft.ad.user:
+        identity: Roger Principe
+        password: redhat@123
+        state: present
+        path: "{{ aduser_ou }}"
+        groups:
+          set: "{{ aduser_groups }}"
