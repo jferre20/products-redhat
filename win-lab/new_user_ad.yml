@@ -10,7 +10,7 @@
         ansible_winrm_transport: ntlm
       delegate_to: ad01
       microsoft.ad.object_info:
-        filter: Name -like 'Joao Ferreira'
+        filter: Name -like 'Luis Ferreira'
         properties:
           - objectSid
           - MemberOf
@@ -27,7 +27,7 @@
         line: "{{ (item | split(','))[0] }}"
         path: /tmp/groups
         create: yes
-      loop: "{{ aduser_gp }}"
+      with_items: "{{ aduser_gp }}"
 
     - name: Get groups to set in new user
       ansible.builtin.slurp:
@@ -40,8 +40,8 @@
         state: absent
 
     - set_fact:
+        aduser_group_cn: "{{ adgroups['content'] | b64decode }}"
         aduser_cn: "{{ (aduser | split(','))[1:] }}"
-        aduser_group_cn: "{{ adgroups['content'] | b64decode }}" 
 
     - set_fact:
         aduser_ou: "{{ aduser_cn | join(',') }}"
