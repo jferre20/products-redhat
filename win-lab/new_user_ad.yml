@@ -24,24 +24,27 @@
 
     - set_fact:
         aduser_cn: "{{ (aduser | split(','))[1:] }}"
-        aduser_group_cn: "{{ (aduser_gp | split('='))[1] }}"
+        aduser_group_cn: "{{ (aduser_gp | split(','))[0] }}"
 
     - set_fact:
         aduser_ou: "{{ aduser_cn | join(',') }}"
-        aduser_groups: "{{ aduser_group_cn | regex_replace(',DC','') }}"
+        aduser_groups: "{{ aduser_group_cn | regex_replace('CN=','') }}"
 
-    - name: Create an user in AD
-      vars:
-        ansible_connection: winrm
-        ansible_user: administrator 
-        ansible_password: redhat@123
-        ansible_port: 5985
-        ansible_winrm_transport: ntlm
-      delegate_to: ad01    
-      microsoft.ad.user:
-        identity: Roger Principe
-        password: redhat@123
-        state: present
-        path: "{{ aduser_ou }}"
-        groups:
-          set: "{{ aduser_groups }}"
+    - debug:
+        msg: "{{ aduser_ou }} {{ aduser_groups }}"
+
+#    - name: Create an user in AD
+#      vars:
+#        ansible_connection: winrm
+#        ansible_user: administrator 
+#        ansible_password: redhat@123
+#        ansible_port: 5985
+#        ansible_winrm_transport: ntlm
+#      delegate_to: ad01    
+#      microsoft.ad.user:
+#        identity: Roger Principe
+#        password: redhat@123
+#        state: present
+#        path: "{{ aduser_ou }}"
+#        groups:
+#          set: "{{ aduser_groups }}"
