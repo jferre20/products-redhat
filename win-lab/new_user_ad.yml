@@ -10,9 +10,9 @@
         ansible_winrm_transport: ntlm
       delegate_to: ad01
       microsoft.ad.object_info:
-        filter: Name -like 'Luis Ferreira'
+        filter: Name -like 'Joao Ferreira'
         properties:
-          - objectSid
+          - DistinguishedName
           - MemberOf
         search_base: DC=jferre,DC=local
       register: aduser_properties
