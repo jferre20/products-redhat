@@ -10,7 +10,6 @@
         ansible_winrm_transport: ntlm
       delegate_to: ad01
       microsoft.ad.object_info:
-        #filter: ObjectClass -eq 'user' -and objectCategory -eq 'Person' -and Name -like 'Joao Ferreira'
         filter: Name -like 'Joao Ferreira'
         properties:
           - objectSid
