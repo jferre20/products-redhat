@@ -10,7 +10,7 @@
         ansible_winrm_transport: ntlm
       delegate_to: ad01
       microsoft.ad.object_info:
-        ldap_filter: (&(Name={{ mirror }}))
+        ldap_filter: (&(Name={{ user_base }}))
         properties:
           - DistinguishedName
           - MemberOf
