@@ -6,4 +6,4 @@
       register: hostname
 
     - debug:
-        var: hostname.stdout_lines
+        var: hostname.stdout
