@@ -16,26 +16,18 @@
           - DistinguishedName
           - MemberOf
         search_base: DC=jferre,DC=local
-      register: aduser_properties
+      register: info_usr_espelho
 
     - name: Obter OU e grupos do usuário
       set_fact:
-        aduser: "{{ (aduser_properties.objects | map(attribute='DistinguishedName'))[0] }}"
-        aduser_gp: "{{ aduser_properties.objects | map(attribute='MemberOf') }}"
-
-    - name: Organiza OU do usuário
-      set_fact:
-        aduser_cn: "{{ (aduser | split(','))[1:] }}"
-
-    - name: Transforma a lista das informações em uma linha
-      set_fact:
-        aduser_ou: "{{ aduser_cn | join(',') }}"
+        ou_usr_espelho: "{{ ((info_usr_espelho.objects | map(attribute='DistinguishedName'))[0] | split(','))[1:] | join(',') }}"
+        gp_usr_espelho: "{{ info_usr_espelho.objects | map(attribute='MemberOf') }}"
 
     - name: Cria um novo usuário no AD com base no usuário espelho
       microsoft.ad.user:
-        identity: Roger Principe
+        identity: Serginho Chulapa
         password: redhat@123
         state: present
-        path: "{{ aduser_ou }}"
+        path: "{{ ou_usr_espelho }}"
         groups:
-          set: "{{ aduser_gp }}"
+          set: "{{ gp_usr_espelho }}"
