@@ -25,7 +25,7 @@
 
     - name: Cria um novo usuário no AD com base no usuário espelho
       microsoft.ad.user:
-        identity: Serginho Chulapa
+        identity: NewUser
         password: redhat@123
         state: present
         path: "{{ ou_usr_espelho }}"
