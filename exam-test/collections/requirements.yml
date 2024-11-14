@@ -1,9 +1,0 @@
----
-collections:
-  - name: ./collections/ansible-posix-1.6.0.tar.gz
-  - name: ./collections/community-general-9.5.0.tar.gz
-
-# DOWNLOAD VIA URL
-#
-#  - name: http://srv01.jferre.local/files/community-general-9.5.0.tar.gz
-#  - name: http://srv01.jferre.local/files/ansible-posix-1.6.0.tar.gz

@@ -1,6 +1,0 @@
----
-- name: copy template myhosts
-  ansible.builtin.template:
-    src: myhosts.j2
-    dest: /tmp/myhosts.txt
-  when: inventory_hostname in groups['dev']

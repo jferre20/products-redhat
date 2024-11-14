@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-    - ansible.builtin.include_role:
-        name: jinja2
