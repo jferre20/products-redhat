@@ -1,6 +1,5 @@
 ---
-- hosts: localhost 
-  gather_facts: false
+- hosts: bastion 
   tasks:
     - include_role:
         name: mysql
