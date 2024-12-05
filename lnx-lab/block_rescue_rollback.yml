@@ -40,7 +40,7 @@
           ansible.builtin.file:
             path: /var/www/html/index.html
             state: absent
-        
+
         - name: Stop service httpd
           ansible.builtin.service:
             name: httpd
