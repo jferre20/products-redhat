@@ -22,9 +22,6 @@
     - set_fact:
         workflow_id: "{{ workflow.json.results[0].id }}"
 
-    - debug:
-        var: workflow_id
-
     - name: Get ID from schedules
       ansible.builtin.uri:
         url: "http://{{ aap['controller'] }}/api/v2/workflow_job_templates/{{ workflow_id }}/schedules"
