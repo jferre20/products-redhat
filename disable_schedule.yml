@@ -44,6 +44,6 @@
         controller_host: "https://{{ aap['controller'] }}"
         controller_oauthtoken: "{{ aap['token'] }}"
         name: "{{ item }}"
-        enabled: false
+        enabled: "{{ enable_schedule }}"
         unified_job_template: "Get hostname and mysql version"
       with_items: "{{ schedules_name }}"
