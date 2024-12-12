@@ -1,5 +1,8 @@
 ---
 collections:
+  - name: ansible.controller
+    version: 4.5.13
+
 # LOCAL FILES
 #
 #  - name: ./collections/ansible-controller-4.6.3.tar.gz
