@@ -1,8 +1,8 @@
 ---
 ansible-navigator:
   execution-environment:
-    #image: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest
-    image: hub01.jferre.local/mysql-ee-rhel8:latest
+    #image: hub01.jferre.local/mysql-ee-rhel8:latest
+    image: hub01.jferre.local/ee-supported-rhel8:latest
     pull:
       arguments:
         - "--tls-verify=false"

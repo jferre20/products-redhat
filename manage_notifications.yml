@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+
+  vars_files:
+    - vars/aap_credentials.yml
+
+  vars:
+    workflow_name: Get hostname and mysql version
+
+  tasks:
+    - name: Manage notifications
+      ansible.controller.workflow_job_template:
+        controller_host: "https://{{ aap['controller'] }}"
+        controller_oauthtoken: "{{ aap['token'] }}"
+        name: Workflow job template name
+        notification_templates_started: []
+        validate_certs: false
+
+# Parameters to enable/disable notifications at templates.
+
+# notification_templates_approvals: - only permited at workflow_job_templates parameter
+# notification_templates_started:
+# notification_templates_success:
+# notification_templates_failure:
