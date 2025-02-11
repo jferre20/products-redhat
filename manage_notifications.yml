@@ -5,9 +5,6 @@
   vars_files:
     - vars/aap_credentials.yml
 
-  vars:
-    workflow_name: Get hostname and mysql version
-
   tasks:
     - name: Get ID from workflow
       ansible.builtin.uri:
