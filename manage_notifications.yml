@@ -9,13 +9,36 @@
     workflow_name: Get hostname and mysql version
 
   tasks:
+    - name: Get ID from workflow
+      ansible.builtin.uri:
+        url: "http://{{ aap['controller'] }}/api/v2/job_templates/"
+        user: "{{ aap['user'] }}"
+        password: "{{ aap['password'] }}"
+        force_basic_auth: true
+        method: GET
+        validate_certs: false
+        return_content: true
+      register: job_template
+
+    - name: set fact list job templates
+      ansible.builtin.set_fact:
+        job_template_list: "{{ job_template.json.results | map(attribute='name') }}"
+
+    - debug:
+        msg: "{{ item }}"
+      loop: "{{ job_template_list }}"
+      when: "item.startswith('PRD')"
+
     - name: Manage notifications
-      ansible.controller.workflow_job_template:
+      ansible.controller.job_template:
         controller_host: "https://{{ aap['controller'] }}"
         controller_oauthtoken: "{{ aap['token'] }}"
-        name: Workflow job template name
-        notification_templates_started: []
+        name: "{{ item }}" 
+        notification_templates_error:
+          - "{{ notification_name }}" 
         validate_certs: false
+      loop: "{{ job_template_list }}"
+      when: "item.startswith('PRD')"
 
 # Parameters to enable/disable notifications at templates.
 
