@@ -30,7 +30,7 @@
           - "{{ notification_name }}" 
         validate_certs: false
       loop: "{{ job_template_list }}"
-      when: "item.startswith('PRD')"
+      when: 'item.startswith("PRD")'
 
 # Parameters to enable/disable notifications at templates.
 
