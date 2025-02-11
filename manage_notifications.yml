@@ -18,16 +18,11 @@
         method: GET
         validate_certs: false
         return_content: true
-      register: job_template
+      register: job_templates_name
 
-    - name: set fact list job templates
+    - name: Create list with job templates
       ansible.builtin.set_fact:
-        job_template_list: "{{ job_template.json.results | map(attribute='name') }}"
-
-    - debug:
-        msg: "{{ item }}"
-      loop: "{{ job_template_list }}"
-      when: "item.startswith('PRD')"
+        job_template_list: "{{ job_templates_name.json.results | map(attribute='name') }}"
 
     - name: Manage notifications
       ansible.controller.job_template:
