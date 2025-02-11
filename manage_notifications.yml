@@ -6,7 +6,7 @@
     - vars/aap_credentials.yml
 
   tasks:
-    - name: Get ID from workflow
+    - name: Get ID from all job templates
       ansible.builtin.uri:
         url: "http://{{ aap['controller'] }}/api/v2/job_templates/"
         user: "{{ aap['user'] }}"
