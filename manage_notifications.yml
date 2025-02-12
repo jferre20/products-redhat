@@ -8,7 +8,7 @@
   tasks:
     - name: Get ID from all job templates
       ansible.builtin.uri:
-        url: "http://{{ aap['controller'] }}/api/v2/job_templates/"
+        url: "http://{{ aap['controller'] }}/api/v2/job_templates/?page_size=600"
         user: "{{ aap['user'] }}"
         password: "{{ aap['password'] }}"
         force_basic_auth: true
