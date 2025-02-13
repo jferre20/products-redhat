@@ -8,7 +8,7 @@
   tasks:
     - name: Get ID from all job templates
       ansible.builtin.uri:
-        url: "http://{{ aap['controller'] }}/api/v2/job_templates/?page_size=600"
+        url: "http://{{ aap['controller'] }}/api/v2/job_templates?name__icontains=prd"
         user: "{{ aap['user'] }}"
         password: "{{ aap['password'] }}"
         force_basic_auth: true
@@ -16,6 +16,9 @@
         validate_certs: false
         return_content: true
       register: job_templates_name
+
+    - debug:
+        var: job_templates_name.json.results | map(attribute='name')
 
     - name: Create list with job templates
       ansible.builtin.set_fact:
