@@ -1,0 +1,50 @@
+---
+- ansible.builtin.set_fact:
+    resource_from_org_id: "{{ item }}"
+
+- name: Get organization name by ID {{ resource_from_org_id }}
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/organizations/{{ resource_from_org_id }}"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: name_org_to_ak
+
+- ansible.builtin.set_fact:
+    org_from_ak: "{{ name_org_to_ak.json.name }}"
+
+- name: Get activation keys from old Satellite
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/organizations/{{ resource_from_org_id }}/activation_keys"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: info_aks
+
+- ansible.builtin.set_fact:
+    name_activation_keys: "{{ info_aks.json.results | map(attribute='name') }}"
+
+- name: Create activation keys at new Satellite 
+  redhat.satellite.activation_key:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['new'] }}"
+    name: "{{ name_ak_from_org }}"
+    organization: "{{ org_from_ak }}"
+    lifecycle_environment: "{{ cycle_env | default('Library') }}"
+    content_view: "{{ cv_from_ak | default('Default Organization View') }}"
+    validate_certs: false
+    #host_collections:
+    #  - rhel7-servers
+    #  - rhel7-production
+    #content_overrides:
+    #  - label: rhel-7-server-optional-rpms
+    #    override: enabled
+    auto_attach: true
+    #release_version: 7Server
+  loop: "{{ name_activation_keys }}"
+  loop_control:
+    loop_var: name_ak_from_org
+  when: create_resource is defined

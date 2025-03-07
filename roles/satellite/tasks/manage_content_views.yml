@@ -1,0 +1,28 @@
+---
+- ansible.builtin.set_fact:
+    cvs_from_org_name: "{{ item }}"
+
+- name: Get content views from organization {{ cvs_from_org_name }}
+  redhat.satellite.content_view_info:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['old'] }}"
+    organization: "{{ cvs_from_org_name }}"
+    validate_certs: false
+  register: info_cv
+
+- ansible.builtin.set_fact:
+    name_content_view: "{{ info_cv.content_views | map(attribute='name') }}"
+
+- name: Create new content views from {{ cvs_from_org_name }} in new Satellite
+  redhat.satellite.content_view:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['new'] }}"
+    name: "{{ name_cv_from_org }}"
+    organization: "{{ cvs_from_org_name }}"
+    validate_certs: false
+  loop: "{{ name_content_view }}" 
+  loop_control:
+    loop_var: name_cv_from_org
+  when: create_resource is defined

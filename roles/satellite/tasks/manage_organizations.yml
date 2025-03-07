@@ -1,11 +1,23 @@
 ---
-- name: Get organizations ID from old satellite
+- name: Get organizations name from {{ satellite['old'] }}
   redhat.satellite.organization_info:
-    username: "{{ username }}"
-    password: "{{ password }}"
-    server_url: "https://{{ old }}"
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['old'] }}"
     validate_certs: false
-  register: orgs
+  register: info_org
 
-- debug:
-  var: orgs
+- ansible.builtin.set_fact: 
+    org_id: "{{ info_org.organizations | map(attribute='id') }}"
+    org_name: "{{ info_org.organizations | map(attribute='name') }}"
+
+- name: Create organizations in {{ satellite['new'] }}
+  redhat.satellite.organization:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['new'] }}"
+    validate_certs: false
+    name: "{{ item }}"
+  with_items:
+    - "{{ org_name }}"
+  when: create_resource is defined

@@ -6,7 +6,13 @@
     - roles/satellite/vars/main.yml
 
   tasks:
-    - name: Get satellite organizations and create it
-      include_role:
-        name: satellite
-        tasks_from: manage_organizations.yml
+    - name: Get organizations and create them on new Satellite
+      include_tasks: roles/satellite/tasks/manage_organizations.yml
+
+    - name: Get content views from organizations and create 
+      include_tasks: roles/satellite/tasks/manage_content_views.yml
+      with_items: "{{ org_name }}"
+
+    - name: Get content views from organizations and create 
+      include_tasks: roles/satellite/tasks/manage_activation_keys.yml
+      with_items: "{{ org_id }}"
