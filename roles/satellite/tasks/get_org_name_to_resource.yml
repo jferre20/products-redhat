@@ -1,0 +1,15 @@
+---
+- ansible.builtin.set_fact:
+    resource_from_org_id: "{{ item }}"
+   
+- name: Get organization name by ID {{ resource_from_org_id }}
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/organizations/{{ resource_from_org_id }}"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: name_org_to_resource
+   
+- ansible.builtin.set_fact:
+    org_name_from_resource: "{{ name_org_to_resource.json.name }}"

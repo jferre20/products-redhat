@@ -17,8 +17,8 @@
         tasks_from: manage_content_views.yml
       with_items: "{{ org_name }}"
 
-    - name: Get activation keys from organizations and create
+    - name: Create resources - Host Collections and Activation Keys 
       include_role: 
         name: satellite
-        tasks_from: manage_activation_keys.yml
+        tasks_from: manage_resources_by_org_id.yml
       with_items: "{{ org_id }}"

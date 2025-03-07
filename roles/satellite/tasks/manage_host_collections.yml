@@ -1,0 +1,30 @@
+---
+- name: Collect name from organization
+  include_tasks: get_org_name_to_resource.yml
+
+- name: Collection host collections from old Satellite
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/organizations/{{ resource_from_org_id }}/host_collections"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: info_hc
+
+- name: Fix variable with host collection names
+  ansible.builtin.set_fact: 
+    host_collection_names: "{{ info_hc.json.results | map(attribute='name') }}"
+
+- name: Create host collection at new Satellite
+  redhat.satellite.host_collection:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['new'] }}"
+    name: "{{ host_collection_to_create }}"
+    organization: "{{ org_name_from_resource }}"
+    state: present
+    validate_certs: false
+  with_items:
+    - "{{ host_collection_names }}"
+  loop_control:
+    loop_var: host_collection_to_create

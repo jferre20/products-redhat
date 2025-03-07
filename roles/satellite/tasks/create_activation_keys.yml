@@ -1,0 +1,32 @@
+---
+- ansible.builtin.set_fact:
+    id_ak_to_attributes: "{{ get_name_hc_from_ak }}"
+
+- name: Get name and host collections from activation key ID {{ id_ak_to_attributes }}
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/activation_keys/{{ id_ak_to_attributes }}"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: info_id_ak
+
+- ansible.builtin.set_fact:
+    name_to_create_ak: "{{ info_id_ak.json.name }}"
+    host_collection_to_create_ak: "{{ info_id_ak.json.host_collections | map(attribute='name') | list }}"
+
+- debug:
+    var: name_to_create_ak
+
+- name: Create activation keys at new Satellite
+  redhat.satellite.activation_key:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['new'] }}"
+    name: "{{ name_to_create_ak }}"
+    organization: "{{ org_name_from_resource }}"
+    lifecycle_environment: "{{ cycle_env | default('Library') }}"
+    content_view: "{{ cv_from_ak | default('Default Organization View') }}"
+    validate_certs: false
+    auto_attach: true
+  when: create_resource is defined

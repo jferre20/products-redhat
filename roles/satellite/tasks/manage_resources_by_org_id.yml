@@ -1,0 +1,6 @@
+---
+- name: Including tasks to creating host collections
+  include_tasks: manage_host_collections.yml
+
+- name: Including tasks to creating activation keys
+  include_tasks: manage_activation_keys.yml
