@@ -1,0 +1,11 @@
+---
+- name: Get organizations ID from old satellite
+  redhat.satellite.organization_info:
+    username: "{{ username }}"
+    password: "{{ password }}"
+    server_url: "https://{{ old }}"
+    validate_certs: false
+  register: orgs
+
+- debug:
+  var: orgs

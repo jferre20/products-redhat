@@ -1,0 +1,6 @@
+---
+satellite:
+  old: sat01
+  new: sat02
+  username: jferre
+  password: redhat@123
