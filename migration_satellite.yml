@@ -7,12 +7,18 @@
 
   tasks:
     - name: Get organizations and create them on new Satellite
-      include_tasks: roles/satellite/tasks/manage_organizations.yml
+      include_role: 
+        name: satellite
+        tasks_from: manage_organizations.yml
 
     - name: Get content views from organizations and create 
-      include_tasks: roles/satellite/tasks/manage_content_views.yml
+      include_role: 
+        name: satellite
+        tasks_from: manage_content_views.yml
       with_items: "{{ org_name }}"
 
-    - name: Get content views from organizations and create 
-      include_tasks: roles/satellite/tasks/manage_activation_keys.yml
+    - name: Get activation keys from organizations and create
+      include_role: 
+        name: satellite
+        tasks_from: manage_activation_keys.yml
       with_items: "{{ org_id }}"
