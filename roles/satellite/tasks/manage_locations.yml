@@ -1,0 +1,34 @@
+---
+- name: Collect name from organization
+  include_tasks: get_org_name_to_resource.yml
+
+- name: Collect locations from old Satellite
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/api/organizations/{{ resource_from_org_id }}/locations"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: info_loc
+
+- name: Fix variable with locations names
+  ansible.builtin.set_fact: 
+    locations_names: "{{ info_loc.json.results | map(attribute='name') }}"
+
+- debug:
+    var: locations_names
+
+- name: Create locations at new Satellite
+  redhat.satellite.location:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['new'] }}"
+    name: "{{ location_to_create }}"
+    organizations: "{{ org_name_from_resource }}"
+    state: present
+    validate_certs: false
+  with_items:
+    - "{{ locations_names }}"
+  loop_control:
+    loop_var: location_to_create
+  when: create_resource is defined

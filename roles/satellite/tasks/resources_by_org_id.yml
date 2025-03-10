@@ -4,3 +4,6 @@
 
 - name: Including tasks to creating activation keys
   include_tasks: manage_activation_keys.yml
+
+- name: Including tasks to locations
+  include_tasks: manage_locations.yml

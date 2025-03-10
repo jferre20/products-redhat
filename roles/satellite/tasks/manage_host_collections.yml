@@ -28,3 +28,4 @@
     - "{{ host_collection_names }}"
   loop_control:
     loop_var: host_collection_to_create
+  when: create_resource is defined
