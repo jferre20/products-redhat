@@ -1,0 +1,36 @@
+---
+- ansible.builtin.set_fact:
+    id_cycle_to_attributes: "{{ get_info_cycle_from_id }}" 
+
+- name: Get name and prior lifecycle environment from cycle ID {{ id_cycle_to_attributes }}
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/environments/{{ id_cycle_to_attributes }}"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: info_id_cycle
+
+- ansible.builtin.set_fact:
+    name_to_create_cycle: "{{ info_id_cycle.json.name }}"
+
+- name: Validate if lifecycle environment is not Library
+  block:
+    - ansible.builtin.set_fact:
+        cycle_prior_to_create_cycle: "{{ info_id_cycle.json.prior.name }}" 
+    
+    - debug:
+        msg: "{{ name_to_create_cycle }} - {{ cycle_prior_to_create_cycle }}"
+
+    - name: Create {{ name_to_create_cycle }} lifecycle environment at new Satellite
+      redhat.satellite.lifecycle_environment:
+        username: "{{ satellite['username'] }}"
+        password: "{{ satellite['password'] }}"
+        server_url: "https://{{ satellite['new'] }}"
+        name: "{{ name_to_create_cycle }}"
+        organization: "{{ org_name_from_resource }}"
+        prior: "{{ cycle_prior_to_create_cycle }}"
+        validate_certs: false
+        state: present
+      when: create_resource is defined
+  when: name_to_create_cycle != 'Library'

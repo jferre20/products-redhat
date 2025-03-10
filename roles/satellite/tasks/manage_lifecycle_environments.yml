@@ -1,0 +1,23 @@
+---
+- name: Collect name from organization
+  include_tasks: get_org_name_to_resource.yml
+
+- name: Collect environments from old Satellite
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/organizations/{{ resource_from_org_id }}/environments"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: info_lifecycle_environments
+
+- name: Fix variable with lifecycle environments names
+  ansible.builtin.set_fact: 
+    lifecycle_environments_id: "{{ info_lifecycle_environments.json.results | map(attribute='id') }}"
+
+- name: Including task to create activation keys in loop
+  include_tasks: create_lifecycle_environments.yml 
+  with_items:
+    - "{{ lifecycle_environments_id }}"
+  loop_control:
+    loop_var: get_info_cycle_from_id
