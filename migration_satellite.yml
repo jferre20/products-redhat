@@ -20,5 +20,5 @@
     - name: Create resources - Host Collections and Activation Keys 
       include_role: 
         name: satellite
-        tasks_from: manage_resources_by_org_id.yml
+        tasks_from: resources_by_org_id.yml
       with_items: "{{ org_id }}"
