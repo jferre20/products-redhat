@@ -1,28 +1,40 @@
 ---
-- ansible.builtin.set_fact:
-    cvs_from_org_name: "{{ item }}"
-
-- name: Get content views from organization {{ cvs_from_org_name }}
-  redhat.satellite.content_view_info:
-    username: "{{ satellite['username'] }}"
+- name: Collect content views from old Satellite in {{ org_name_from_resource }}
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/organizations/{{ resource_from_org_id }}/content_views"
+    user: "{{ satellite['username'] }}"
     password: "{{ satellite['password'] }}"
-    server_url: "https://{{ satellite['old'] }}"
-    organization: "{{ cvs_from_org_name }}"
+    force_basic_auth: true
     validate_certs: false
-  register: info_cv
+  register: info_cvs
 
-- ansible.builtin.set_fact:
-    name_content_view: "{{ info_cv.content_views | map(attribute='name') }}"
+- name: Fix variable with content_views names
+  ansible.builtin.set_fact: 
+    content_views_names: "{{ info_cvs.json.results | map(attribute='name') }}"
 
-- name: Create new content views from {{ cvs_from_org_name }} in new Satellite
+- name: Create new content views from {{ org_name_from_resource }}
   redhat.satellite.content_view:
     username: "{{ satellite['username'] }}"
     password: "{{ satellite['password'] }}"
     server_url: "https://{{ satellite['new'] }}"
-    name: "{{ name_cv_from_org }}"
-    organization: "{{ cvs_from_org_name }}"
+    name: "{{ content_views_to_create }}"
+    organization: "{{ org_name_from_resource }}"
     validate_certs: false
-  loop: "{{ name_content_view }}" 
+  loop: "{{ content_views_names }}" 
   loop_control:
-    loop_var: name_cv_from_org
+    loop_var: content_views_to_create
   when: create_resource is defined
+
+# - name: Publish content views with all lifecycle environments
+#   redhat.satellite.content_view_version:
+#     username: "{{ satellite['username'] }}"
+#     password: "{{ satellite['password'] }}"
+#     server_url: "https://{{ satellite['new'] }}"
+#     content_view: "{{ name_cv_from_org }}"
+#     organization: "{{ cvs_from_org_name }}"
+#     lifecycle_environments:
+#       - "{{ lifecycle_environments_names }}"
+#     validate_certs: false
+#   loop: "{{ name_content_view }}" 
+#   loop_control:
+#     loop_var: name_cv_from_org

@@ -1,0 +1,18 @@
+---
+- name: Collect organization name
+  include_tasks: get_org_name_to_resource.yml
+
+- name: Get Locations and create them at new Satellite 
+  include_tasks: manage_locations.yml
+
+- name: Get lifecycle environments from organizations and create 
+  include_tasks: manage_lifecycle_environments.yml
+
+- name: Get Content Views from organizations and create 
+  include_tasks: manage_content_views.yml
+
+- name: Get Host Collections and create them 
+  include_tasks: manage_host_collections.yml
+
+- name: Get Activation Keys and create them
+  include_tasks: manage_activation_keys.yml

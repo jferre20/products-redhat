@@ -1,7 +1,4 @@
 ---
-- name: Collect name from organization
-  include_tasks: get_org_name_to_resource.yml
-
 - name: Collect locations from old Satellite
   ansible.builtin.uri:
     url: "https://{{ satellite['old'] }}/api/organizations/{{ resource_from_org_id }}/locations"
