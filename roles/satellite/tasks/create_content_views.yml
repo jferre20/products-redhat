@@ -1,0 +1,54 @@
+---
+- ansible.builtin.set_fact:
+    attr_by_cv_id: "{{ get_attributes_from_cvs }}"
+
+- name: Get name and environments from content view ID {{ attr_by_cv_id }}
+  ansible.builtin.uri:
+    url: "https://{{ satellite['old'] }}/katello/api/content_views/{{ attr_by_cv_id }}"
+    user: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    force_basic_auth: true
+    validate_certs: false
+  register: info_id_cv
+
+- name: Get variable informations from content view ID {{ attr_by_cv_id }}
+  ansible.builtin.set_fact: 
+    content_view_name: "{{ info_id_cv.json.name }}"
+    content_view_envs: "{{ info_id_cv.json.environments | map(attribute='name') }}"
+    #content_view_envs: "{{ info_id_cv.json.results | map(attribute='environments') | map('map', attribute='name') }}"
+
+- debug: 
+    var: content_view_name
+
+- debug:
+    var: content_view_envs 
+
+- name: Create and publish content view {{ content_view_name }}
+  block:
+    - name: Create new content view in {{ org_name_from_resource }}
+      redhat.satellite.content_view:
+        username: "{{ satellite['username'] }}"
+        password: "{{ satellite['password'] }}"
+        server_url: "https://{{ satellite['new'] }}"
+        name: "{{ content_view_name }}" 
+        organization: "{{ org_name_from_resource }}"
+        validate_certs: false
+      when: content_view_name is not search('Default Organization View')
+    
+    - name: Publish content view with all lifecycle environments
+      redhat.satellite.content_view_version:
+        username: "{{ satellite['username'] }}"
+        password: "{{ satellite['password'] }}"
+        server_url: "https://{{ satellite['new'] }}"
+        content_view: "{{ content_view_name }}"
+        organization: "{{ org_name_from_resource }}"
+        version: 1.0
+        lifecycle_environments:
+          - "{{ envs_by_cv }}" 
+        validate_certs: false
+      loop: "{{ content_view_envs }}"
+      loop_control:
+        loop_var: envs_by_cv
+      when: content_view_name is not search('Default Organization View')
+      
+  when: create_resource is defined

@@ -10,31 +10,11 @@
 
 - name: Fix variable with content_views names
   ansible.builtin.set_fact: 
-    content_views_names: "{{ info_cvs.json.results | map(attribute='name') }}"
+    content_views_id: "{{ info_cvs.json.results | map(attribute='id') }}"
 
-- name: Create new content views from {{ org_name_from_resource }}
-  redhat.satellite.content_view:
-    username: "{{ satellite['username'] }}"
-    password: "{{ satellite['password'] }}"
-    server_url: "https://{{ satellite['new'] }}"
-    name: "{{ content_views_to_create }}"
-    organization: "{{ org_name_from_resource }}"
-    validate_certs: false
-  loop: "{{ content_views_names }}" 
+- name: Including task to create content views in loop 
+  include_tasks: create_content_views.yml
+  with_items: 
+    - "{{ content_views_id }}"
   loop_control:
-    loop_var: content_views_to_create
-  when: create_resource is defined
-
-# - name: Publish content views with all lifecycle environments
-#   redhat.satellite.content_view_version:
-#     username: "{{ satellite['username'] }}"
-#     password: "{{ satellite['password'] }}"
-#     server_url: "https://{{ satellite['new'] }}"
-#     content_view: "{{ name_cv_from_org }}"
-#     organization: "{{ cvs_from_org_name }}"
-#     lifecycle_environments:
-#       - "{{ lifecycle_environments_names }}"
-#     validate_certs: false
-#   loop: "{{ name_content_view }}" 
-#   loop_control:
-#     loop_var: name_cv_from_org
+    loop_var: get_attributes_from_cvs
