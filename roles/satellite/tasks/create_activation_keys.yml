@@ -12,21 +12,44 @@
   register: info_id_ak
 
 - ansible.builtin.set_fact:
-    name_to_create_ak: "{{ info_id_ak.json.name }}"
-    host_collection_to_create_ak: "{{ info_id_ak.json.host_collections | map(attribute='name') | list }}"
+    name_to_ak: "{{ info_id_ak.json.name }}"
+    host_collection_to_ak: "{{ info_id_ak.json.host_collections | map(attribute='name') | list }}" 
+    lifecycle_env_to_ak: "{{ info_id_ak.json.environment.name }}" 
+    content_view_to_ak: "{{ info_id_ak.json.content_view.name }}"
 
 - debug:
-    var: name_to_create_ak
+    msg: "#### Activation Key: ######## {{ name_to_ak }} ############## \n
+          #### Host Collection: ####### {{ host_collection_to_ak }} ### \n
+          #### Lifecycle Environment: # {{ lifecycle_env_to_ak }} ##### \n
+          #### Content View: ########## {{ content_view_to_ak }} ######"
 
-- name: Create activation keys at new Satellite
-  redhat.satellite.activation_key:
-    username: "{{ satellite['username'] }}"
-    password: "{{ satellite['password'] }}"
-    server_url: "https://{{ satellite['new'] }}"
-    name: "{{ name_to_create_ak }}"
-    organization: "{{ org_name_from_resource }}"
-    lifecycle_environment: "{{ cycle_env | default('Library') }}"
-    content_view: "{{ cv_from_ak | default('Default Organization View') }}"
-    validate_certs: false
-    auto_attach: true
+- name: Create activation keys and set host collections
+  block:
+    - name: Create activation keys at new Satellite
+      redhat.satellite.activation_key:
+        username: "{{ satellite['username'] }}"
+        password: "{{ satellite['password'] }}"
+        server_url: "https://{{ satellite['new'] }}"
+        name: "{{ name_to_ak }}"
+        organization: "{{ org_name_from_resource }}"
+        lifecycle_environment: "{{ lifecycle_env_to_ak | default('Library') }}"
+        content_view: "{{ content_view_to_ak | default('Default Organization View') }}"
+        validate_certs: false
+        auto_attach: true
+
+    - name: Set host collections when it exists
+      redhat.satellite.activation_key:
+        username: "{{ satellite['username'] }}"
+        password: "{{ satellite['password'] }}"
+        server_url: "https://{{ satellite['new'] }}"
+        name: "{{ name_to_ak }}"
+        organization: "{{ org_name_from_resource }}"
+        host_collections:
+          - "{{ set_host_collections_into_ak }}"
+        validate_certs: false
+      loop: "{{ host_collection_to_ak }}" 
+      loop_control:
+        loop_var: set_host_collections_into_ak
+      when: host_collection_to_ak is defined
+      
   when: create_resource is defined

@@ -15,7 +15,6 @@
   ansible.builtin.set_fact: 
     content_view_name: "{{ info_id_cv.json.name }}"
     content_view_envs: "{{ info_id_cv.json.environments | map(attribute='name') }}"
-    #content_view_envs: "{{ info_id_cv.json.results | map(attribute='environments') | map('map', attribute='name') }}"
 
 - debug: 
     var: content_view_name
