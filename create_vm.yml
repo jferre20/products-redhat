@@ -39,6 +39,10 @@
       set_fact:
         ip_address: "{{ instance.hw_eth0.ipaddresses[0] }}"
 
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ vm_name }}"
+
 #    - name: Provision a VM
 #      ansible.builtin.import_role:
 #        name: cloud.vmware_ops.provision_vm
