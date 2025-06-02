@@ -53,6 +53,7 @@
 
         - name: Reboot machine
           ansible.builtin.reboot:
+            reboot_timeout: 60
 
 #    - name: Provision a VM
 #      ansible.builtin.import_role:
