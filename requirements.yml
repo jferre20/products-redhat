@@ -1,4 +1,4 @@
 ---
 collections:
   - name: community.vmware
-  - name: cloud.vmware_ops
+  - name: community.general
