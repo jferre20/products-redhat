@@ -29,20 +29,25 @@
         name: "{{ vm_name }}"
         wait_for_ip_address: true
         validate_certs: false
-        networks:
-          - name: "VM Network"
-            ip: "{{ ip }}"
-            netmask: "{{ netmask }}"
-            gateway: "{{ gateway }}"
       register: create_vm
 
     - name: Get IP Address
       set_fact:
         ip_address: "{{ create_vm.instance.hw_eth0.ipaddresses[0] }}"
 
-    - name: Set hostname
-      ansible.builtin.hostname:
-        name: "{{ vm_name }}"
+    - name: Execute changes on server
+      delegate_to: "{{ ip_address }}" 
+      block:
+        - name: Set hostname
+          ansible.builtin.hostname:
+            name: "{{ vm_name }}"
+
+        - name: Set IP on server
+          community.general.nmcli:
+            type: ethernet
+            ip4: "{{ ip }}"
+            gw4: "{{ gateway }}"
+            state: present
 
 #    - name: Provision a VM
 #      ansible.builtin.import_role:
