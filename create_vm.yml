@@ -15,7 +15,7 @@
     - name: Get RHEL 8 version
       ansible.builtin.set_fact:
         template: "template-rhel8"
-        network_name: 'ens22'
+        network_name: 'ens33'
       when: so_version == "RHEL 8"
 
     - name:  Clone a virtual machine from Linux template and customize
