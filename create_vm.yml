@@ -1,20 +1,20 @@
 ---
 - hosts: bastion 
   gather_facts: false
-  vars:
-    hostname: 192.168.15.251
-    username: administrator@jferre.local
-    password: Redhat@123
-    datacenter: dc01.jferre.local
+
+  vars_file: group_vars/vmware.yml
+
   tasks:
     - name: Get RHEL 9 version
       ansible.builtin.set_fact:
         template: "template-rhel9"
+        network_name: 'ens33'
       when: so_version == "RHEL 9"
 
     - name: Get RHEL 8 version
       ansible.builtin.set_fact:
         template: "template-rhel8"
+        network_name: 'ens22'
       when: so_version == "RHEL 8"
 
     - name:  Clone a virtual machine from Linux template and customize
@@ -33,10 +33,10 @@
 
     - name: Get IP Address
       set_fact:
-        ip_address: "{{ create_vm.instance.hw_eth0.ipaddresses[0] }}"
+        dhcp_vm_ip: "{{ create_vm.instance.hw_eth0.ipaddresses[0] }}"
 
     - name: Execute changes on server
-      delegate_to: "{{ ip_address }}" 
+      delegate_to: "{{ dhcp_vm_ip}}"
       block:
         - name: Set hostname
           ansible.builtin.hostname:
@@ -45,9 +45,13 @@
         - name: Set IP on server
           community.general.nmcli:
             type: ethernet
+            conn_name: "{{ network_name }}"
             ip4: "{{ ip }}"
             gw4: "{{ gateway }}"
             state: present
+
+        - name: Reboot machine
+          ansible.builtin.reboot:
 
 #    - name: Provision a VM
 #      ansible.builtin.import_role:
