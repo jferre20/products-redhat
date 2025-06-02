@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: bastion 
   gather_facts: false
   vars:
     hostname: 192.168.15.251
