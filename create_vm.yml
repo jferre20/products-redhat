@@ -7,6 +7,16 @@
     password: Redhat@123
     datacenter: dc01.jferre.local
   tasks:
+    - name: Get RHEL 9 version
+      ansible.builtin.set_fact:
+        template: "template_rhel9"
+      when: so_version == "RHEL 9"
+
+    - name: Get RHEL 8 version
+      ansible.builtin.set_fact:
+        template: "template_rhel8"
+      when: so_version == "RHEL 8"
+
     - name:  Clone a virtual machine from Linux template and customize
       community.vmware.vmware_guest:
         hostname: "{{ hostname }}" 
