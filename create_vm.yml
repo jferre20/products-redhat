@@ -23,7 +23,7 @@
         hostname: "{{ vcenter['hostname'] }}" 
         username: "{{ vcenter['username'] }}"
         password: "{{ vcenter['password'] }}"
-        datacenter: "{{ vcenter['datacenter }}"
+        datacenter: "{{ vcenter['datacenter'] }}"
         state: present
         folder: "VMs"
         template: "{{ template }}"
