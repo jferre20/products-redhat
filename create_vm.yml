@@ -20,10 +20,10 @@
 
     - name:  Clone a virtual machine from Linux template and customize
       community.vmware.vmware_guest:
-        hostname: "{{ hostname }}" 
-        username: "{{ username }}"
-        password: "{{ password }}"
-        datacenter: "{{ datacenter }}"
+        hostname: "{{ vcenter['hostname'] }}" 
+        username: "{{ vcenter['username'] }}"
+        password: "{{ vcenter['password'] }}"
+        datacenter: "{{ vcenter['datacenter }}"
         state: present
         folder: "VMs"
         template: "{{ template }}"
