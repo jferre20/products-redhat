@@ -2,7 +2,8 @@
 - hosts: bastion 
   gather_facts: false
 
-  vars_file: group_vars/vmware.yml
+  vars_files: 
+    - group_vars/vmware.yml
 
   tasks:
     - name: Get RHEL 9 version
