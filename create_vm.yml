@@ -30,7 +30,8 @@
         wait_for_ip_address: true
         validate_certs: false
         networks:
-          - ip: "{{ ip }}"
+          - name: "VM Network"
+            ip: "{{ ip }}"
             netmask: "{{ netmask }}"
             gateway: "{{ gateway }}"
       register: create_vm
