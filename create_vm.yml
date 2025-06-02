@@ -38,7 +38,7 @@
 
     - name: Get IP Address
       set_fact:
-        ip_address: "{{ instance.hw_eth0.ipaddresses[0] }}"
+        ip_address: "{{ create_vm.instance.hw_eth0.ipaddresses[0] }}"
 
     - name: Set hostname
       ansible.builtin.hostname:
