@@ -35,9 +35,9 @@
             gateway: "{{ gateway }}"
       register: create_vm
 
-     - name: Get IP Address
-       set_fact:
-         ip_address: "{{ instance.hw_eth0.ipaddresses[0] }}"
+    - name: Get IP Address
+      set_fact:
+        ip_address: "{{ instance.hw_eth0.ipaddresses[0] }}"
 
 #    - name: Provision a VM
 #      ansible.builtin.import_role:
