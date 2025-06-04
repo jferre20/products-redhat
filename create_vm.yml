@@ -51,7 +51,6 @@
             gw4: '{{ gateway }}'
             state: present
 
-    - name: Reboot machine
-      delegate_to: "{{ new_ip }}"
-      ansible.builtin.reboot:
-        reboot_command: 60
+        - name: Reboot machine
+          ansible.builtin.reboot:
+            reboot_timeout: 60
