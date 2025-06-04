@@ -33,7 +33,7 @@
 #      register: create_vm
 
   roles:
-    - role: cloud.vmware_ops
+    - role: cloud.vmware_ops.provision_vm
       provision_vm_hostname: "{{ vcenter['hostname'] }}"
       provision_vm_username: "{{ vcenter['username'] }}"
       provision_vm_password: "{{ vcenter['password'] }}"
