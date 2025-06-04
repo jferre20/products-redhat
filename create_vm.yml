@@ -47,6 +47,11 @@
           community.general.nmcli:
             type: ethernet
             conn_name: "{{ network_name }}"
-            ip4: "{{ ip }}"
+            ip4: "{{ new_ip }}"
             gw4: "{{ gateway }}"
             state: present
+
+    - name: Reboot machine
+      delegate_to: "{{ new_ip }}"
+      ansible.builtin.reboot:
+        reboot_command: 60
