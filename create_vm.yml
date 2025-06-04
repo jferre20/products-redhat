@@ -47,15 +47,10 @@
           community.general.nmcli:
             type: ethernet
             conn_name: "{{ network_name }}"
-            ip4: '{{ new_ip }}/{{ netmask }}'
-            gw4: '{{ gateway }}'
-            state: down
+            ip4: '{{ dhcp_vm_ip }}/24'
+            gw4: '192.168.15.1'
+            state: present
 
         - name: Reboot machine
-          ansible.builtin.command: reboot
-
-    - name: Wait machine with new IP
-      ansible.builtin.wait_for: 
-        host: "{{ new_ip }}"
-        port: 22
-        timeout: 60
+          ansible.builtin.reboot:
+            reboot_timeout: 60
