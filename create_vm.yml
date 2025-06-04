@@ -5,7 +5,7 @@
   vars_files: 
     - group_vars/vmware.yml
 
-  tasks:
+  pre_tasks:
     - name: Get RHEL 9 variables
       ansible.builtin.set_fact:
         template: "template-rhel9"
@@ -32,22 +32,21 @@
 #        validate_certs: false
 #      register: create_vm
 
-    - name: Provision a VM using a template pre-created
-      ansible.builtin.import_role:
-        name: cloud.vmware_ops
-      vars:
-        provision_vm_hostname: "{{ vcenter['hostname'] }}"
-        provision_vm_username: "{{ vcenter['username'] }}"
-        provision_vm_password: "{{ vcenter['password'] }}"
-        provision_vm_validate_certs: false
-        provision_vm_folder: "VMs"
-        provision_vm_datacenter: "{{ vcenter['datacenter'] }}"
-        provision_vm_name: "{{ vm_name }}"
-        provision_vm_template: "{{ template }}"
-        provision_vm_state: "poweredon"
-        provision_vm_wait_for_ip_address: true
+  roles:
+    - role: cloud.vmware_ops
+      provision_vm_hostname: "{{ vcenter['hostname'] }}"
+      provision_vm_username: "{{ vcenter['username'] }}"
+      provision_vm_password: "{{ vcenter['password'] }}"
+      provision_vm_validate_certs: false
+      provision_vm_folder: "VMs"
+      provision_vm_datacenter: "{{ vcenter['datacenter'] }}"
+      provision_vm_name: "{{ vm_name }}"
+      provision_vm_template: "{{ template }}"
+      provision_vm_state: "poweredon"
+      provision_vm_wait_for_ip_address: true
       register: create_vm
 
+  post_tasks:
     - name: Get IP Address
       set_fact:
         dhcp_vm_ip: "{{ create_vm.instance.hw_eth0.ipaddresses[0] }}"
