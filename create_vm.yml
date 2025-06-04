@@ -6,30 +6,46 @@
     - group_vars/vmware.yml
 
   tasks:
-    - name: Get RHEL 9 version
+    - name: Get RHEL 9 variables
       ansible.builtin.set_fact:
         template: "template-rhel9"
         network_name: 'ens33'
       when: so_version == "RHEL 9"
 
-    - name: Get RHEL 8 version
+    - name: Get RHEL 8 variables
       ansible.builtin.set_fact:
         template: "template-rhel8"
         network_name: 'ens33'
       when: so_version == "RHEL 8"
 
-    - name:  Clone a virtual machine from Linux template and customize
-      community.vmware.vmware_guest:
-        hostname: "{{ vcenter['hostname'] }}" 
-        username: "{{ vcenter['username'] }}"
-        password: "{{ vcenter['password'] }}"
-        datacenter: "{{ vcenter['datacenter'] }}"
-        state: present
-        folder: "VMs"
-        template: "{{ template }}"
-        name: "{{ vm_name }}"
-        wait_for_ip_address: true
-        validate_certs: false
+#    - name:  Clone a virtual machine from Linux template and customize
+#      community.vmware.vmware_guest:
+#        hostname: "{{ vcenter['hostname'] }}" 
+#        username: "{{ vcenter['username'] }}"
+#        password: "{{ vcenter['password'] }}"
+#        datacenter: "{{ vcenter['datacenter'] }}"
+#        state: present
+#        folder: "VMs"
+#        template: "{{ template }}"
+#        name: "{{ vm_name }}"
+#        wait_for_ip_address: true
+#        validate_certs: false
+#      register: create_vm
+
+    - name: Provision a VM using a template pre-created
+      ansible.builtin.import_role:
+        name: cloud.vmware_ops.provision_vm
+      vars:
+        provision_vm_hostname: "{{ vcenter['hostname'] }}"
+        provision_vm_username: "{{ vcenter['username'] }}"
+        provision_vm_password: "{{ vcenter['password'] }}"
+        provision_vm_validate_certs: false
+        provision_vm_folder: "VMs"
+        provision_vm_datacenter: "{{ vcenter['datacenter'] }}"
+        provision_vm_name: "{{ vm_name }}"
+        provision_vm_template: "{{ template }}"
+        provision_vm_state: "poweredon"
+        provision_vm_wait_for_ip_address: true
       register: create_vm
 
     - name: Get IP Address
@@ -55,18 +71,3 @@
           ansible.builtin.reboot:
             reboot_timeout: 60
 
-#    - name: Provision a VM
-#      ansible.builtin.import_role:
-#        name: cloud.vmware_ops.provision_vm
-#      vars:
-#        provision_vm_hostname: "{{ hostname }}"
-#        provision_vm_username: "{{ username }}"
-#        provision_vm_password: "{{ password }}"
-#        provision_vm_validate_certs: false
-#        provision_vm_folder: "VMs"
-#        provision_vm_datacenter: "{{ datacenter }}"
-#        provision_vm_name: "{{ vm_name }}"
-#        provision_vm_template: "{{ template }}"
-#        provision_vm_state: "poweredon"
-#        provision_vm_wait_for_ip_address: true
-#      register: create_vm
