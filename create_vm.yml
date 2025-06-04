@@ -49,6 +49,10 @@
             conn_name: "{{ network_name }}"
             ip4: '{{ new_ip }}/{{ netmask }}'
             gw4: '{{ gateway }}'
+            state: up
+
+        - name: Reboot machine
+          ansible.builtin.command: reboot
 
     - name: Wait machine with new IP
       ansible.builtin.wait_for: 
