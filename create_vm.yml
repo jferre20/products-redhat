@@ -51,8 +51,5 @@
             gw4: '{{ gateway }}'
             state: present
 
-        - name: Reboot machine
-          ansible.builtin.command: reboot
-            
-    - name: Wait machine to back with new IP
+    - name: Wait machine with new IP
       ansible.builtin.wait_for: "{{ new_ip }}"
