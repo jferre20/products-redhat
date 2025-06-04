@@ -1,5 +1,5 @@
 ---
-- hosts: bastion 
+- hosts: localhost 
   gather_facts: false
 
   vars_files: 
@@ -51,7 +51,6 @@
             gw4: "{{ gateway }}"
             state: present
 
-        - name: Reboot machine
-          ansible.builtin.reboot:
-            reboot_timeout: 60
-
+    - name: Reboot machine
+      ansible.builtin.reboot:
+        reboot_timeout: 60
