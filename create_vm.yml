@@ -34,7 +34,7 @@
 
     - name: Provision a VM using a template pre-created
       ansible.builtin.import_role:
-        name: cloud.vmware_ops.provision_vm
+        name: cloud.vmware_ops
       vars:
         provision_vm_hostname: "{{ vcenter['hostname'] }}"
         provision_vm_username: "{{ vcenter['username'] }}"
