@@ -5,7 +5,7 @@
   vars_files: 
     - group_vars/vmware.yml
 
-  pre_tasks:
+  tasks:
     - name: Get RHEL 9 variables
       ansible.builtin.set_fact:
         template: "template-rhel9"
@@ -18,35 +18,20 @@
         network_name: 'ens33'
       when: so_version == "RHEL 8"
 
-#    - name:  Clone a virtual machine from Linux template and customize
-#      community.vmware.vmware_guest:
-#        hostname: "{{ vcenter['hostname'] }}" 
-#        username: "{{ vcenter['username'] }}"
-#        password: "{{ vcenter['password'] }}"
-#        datacenter: "{{ vcenter['datacenter'] }}"
-#        state: present
-#        folder: "VMs"
-#        template: "{{ template }}"
-#        name: "{{ vm_name }}"
-#        wait_for_ip_address: true
-#        validate_certs: false
-#      register: create_vm
-
-  roles:
-    - role: cloud.vmware_ops.provision_vm
-      provision_vm_hostname: "{{ vcenter['hostname'] }}"
-      provision_vm_username: "{{ vcenter['username'] }}"
-      provision_vm_password: "{{ vcenter['password'] }}"
-      provision_vm_validate_certs: false
-      provision_vm_folder: "VMs"
-      provision_vm_datacenter: "{{ vcenter['datacenter'] }}"
-      provision_vm_name: "{{ vm_name }}"
-      provision_vm_template: "{{ template }}"
-      provision_vm_state: "poweredon"
-      provision_vm_wait_for_ip_address: true
+    - name:  Clone a virtual machine from Linux template and customize
+      community.vmware.vmware_guest:
+        hostname: "{{ vcenter['hostname'] }}" 
+        username: "{{ vcenter['username'] }}"
+        password: "{{ vcenter['password'] }}"
+        datacenter: "{{ vcenter['datacenter'] }}"
+        state: present
+        folder: "VMs"
+        template: "{{ template }}"
+        name: "{{ vm_name }}"
+        wait_for_ip_address: true
+        validate_certs: false
       register: create_vm
 
-  post_tasks:
     - name: Get IP Address
       set_fact:
         dhcp_vm_ip: "{{ create_vm.instance.hw_eth0.ipaddresses[0] }}"
