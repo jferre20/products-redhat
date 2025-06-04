@@ -50,7 +50,3 @@
             ip4: "{{ ip }}"
             gw4: "{{ gateway }}"
             state: present
-
-    - name: Reboot machine
-      ansible.builtin.reboot:
-        reboot_timeout: 60
