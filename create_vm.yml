@@ -52,4 +52,6 @@
             state: present
 
     - name: Wait machine with new IP
-      ansible.builtin.wait_for: "{{ new_ip }}"
+      ansible.builtin.wait_for: 
+        host: "{{ new_ip }}"
+        port: 22
