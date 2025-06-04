@@ -47,8 +47,8 @@
           community.general.nmcli:
             type: ethernet
             conn_name: "{{ network_name }}"
-            ip4: "{{ new_ip }}"
-            gw4: "{{ gateway }}"
+            ip4: '{{ new_ip }}'
+            gw4: '{{ gateway }}'
             state: present
 
     - name: Reboot machine
