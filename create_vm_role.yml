@@ -1,5 +1,5 @@
 ---
-- hosts: bastion
+- hosts: localhost
   gather_facts: true
   tasks:
     - name: Provision a VM
