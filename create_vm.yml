@@ -6,18 +6,6 @@
     - group_vars/vmware.yml
 
   tasks:
-    - name: Get RHEL 9 variables
-      ansible.builtin.set_fact:
-        template: "template-rhel9"
-        network_name: 'ens33'
-      when: so_version == "RHEL 9"
-
-    - name: Get RHEL 8 variables
-      ansible.builtin.set_fact:
-        template: "template-rhel8"
-        network_name: 'ens33'
-      when: so_version == "RHEL 8"
-
     - name:  Clone a virtual machine from Linux template and customize
       community.vmware.vmware_guest:
         hostname: "{{ vcenter['hostname'] }}" 
@@ -26,8 +14,8 @@
         datacenter: "{{ vcenter['datacenter'] }}"
         state: present
         folder: "VMs"
-        template: "{{ template }}"
-        name: "{{ vm_name }}"
+        template: "template-rhel9"
+        name: "rhel9-aap"
         wait_for_ip_address: true
         validate_certs: false
       register: create_vm
@@ -40,17 +28,25 @@
       delegate_to: "{{ dhcp_vm_ip}}"
       block:
         - name: Set hostname
+          become: true
+          become_user: root
           ansible.builtin.hostname:
-            name: "{{ vm_name }}"
+            name: "rhel9-aap"
 
         - name: Set IP on server
           community.general.nmcli:
             type: ethernet
-            conn_name: "{{ network_name }}"
-            ip4: '{{ dhcp_vm_ip }}/24'
+            conn_name: ens33
+            ip4: '192.168.15.223/24'
             gw4: '192.168.15.1'
             state: present
 
         - name: Reboot machine
-          ansible.builtin.reboot:
-            reboot_timeout: 60
+          ansible.builtin.shell: "sleep 5 && reboot"
+          async: 1
+          poll: 0
+
+    - name: Wait for backup machine with new IP
+      wait_for:
+        host: 192.168.15.223
+        port: 22
