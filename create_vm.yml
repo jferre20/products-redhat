@@ -55,3 +55,4 @@
       ansible.builtin.wait_for: 
         host: "{{ new_ip }}"
         port: 22
+        timeout: 60
