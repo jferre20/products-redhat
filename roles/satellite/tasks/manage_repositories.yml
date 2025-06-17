@@ -1,0 +1,12 @@
+---
+- name: Find repository by organization
+  redhat.satellite.repository_info:
+    username: "{{ satellite['username'] }}"
+    password: "{{ satellite['password'] }}"
+    server_url: "https://{{ satellite['old'] }}"
+    organization: "{{ org_name_from_resource }}"
+    validate_certs: false
+  register: info_repos
+
+- debug:
+    var: info_repos

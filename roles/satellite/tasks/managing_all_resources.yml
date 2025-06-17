@@ -16,3 +16,6 @@
 
 - name: Get Activation Keys and create them
   include_tasks: manage_activation_keys.yml
+
+#- name: Get repositories, enable and sync them
+#  include_tasks: manage_repositories.yml
